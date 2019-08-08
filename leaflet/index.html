@@ -10,12 +10,12 @@
 <script>
 
         var leafletMap = new L.Map("mapDiv", {
-            zoom: 8,
-            center: [18.260521, 109.517698],
+            zoom: 8,   //初始化地图的缩放
+            center: [18.260521, 109.517698],  //初始化地图的地理中心.
             boxZoom: true, 
         });
-        var marker = new L.marker([18.260521, 109.517698]);
-        //marker.addTo(map);
+        // var marker = new L.marker([18.260521, 109.517698]);
+        // marker.addTo(map);
         var wmsLayer= L.tileLayer.wms("http://localhost:8080/geoserver/map/wms?", {
             layers: 'map:CHINA_2014GDP',//需要加载的图层
             format: 'image/png',//返回的数据格式
@@ -26,7 +26,7 @@
         leafletMap.addLayer(wmsLayer);
 
 
-        //  mapbox 官网注册并创建下面的access token都是免费的，不过有5w次的浏览限制
+        // //mapbox 官网注册并创建下面的access token都是免费的，不过有5w次的浏览限制
         // var url = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2FuZXdhbmciLCJhIjoiY2pwM2UxNHNkMGF1MzNwc2FtMnNhdXJsMCJ9.KZpCBtizDeltZO6JhGc6_w';
         // //初始化 地图
         // var leafletMap = L.map('mapDiv').setView([18.260521, 109.517698],  10);
